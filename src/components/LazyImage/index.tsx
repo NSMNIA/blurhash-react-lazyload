@@ -19,8 +19,8 @@ const LazyImage: FC<LazyImageProps> = ({ src, hash = "", alt = "" }) => {
                 let image = document.createElement("img");
                 image.src = src;
                 image.onload = () => {
-                    image.classList.add(STYLE.show);
                     setLoaded(true);
+                    image.classList.add(STYLE.show);
                 }
                 imageContainer.current.appendChild(image);
             }
