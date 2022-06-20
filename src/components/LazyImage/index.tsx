@@ -14,6 +14,7 @@ const LazyImage: FC<LazyImageProps> = ({ src, hash = "", alt = "" }) => {
         <>
             <div className={STYLE["image"]}>
                 {hash !== null && <Blurhash
+                    className={loaded ? `${STYLE['image--canvas']} ${STYLE['hide']}` : STYLE['image--canvas']}
                     hash={hash || ""}
                     height={'100%'}
                     width={'100%'}
