@@ -32,6 +32,8 @@
         transition-delay: .25s;
         background-color: #f9f9f9;
         transition-timing-function: ease-in-out;
+        user-select: none;
+        pointer-events: none;
 
         &.hide {
             opacity: 0;
