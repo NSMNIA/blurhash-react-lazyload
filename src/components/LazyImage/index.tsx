@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useState } from "react";
 import { Blurhash } from "react-blurhash";
 import STYLE from "./LazyLoad.module.scss";
 
@@ -9,18 +9,19 @@ interface LazyImageProps {
 }
 
 const LazyImage: FC<LazyImageProps> = ({ src, hash = "", alt = "" }) => {
-    const image = useRef<HTMLImageElement>(null);
-
+    const [loaded, setLoaded] = useState<boolean>(false);
     return (
         <>
             <div className={STYLE["image"]}>
                 {hash !== null && <Blurhash
-                    hash={hash}
+                    hash={hash || ""}
+                    height={'100%'}
+                    width={'100%'}
                     resolutionX={32}
                     resolutionY={32}
                     punch={1}
                 />}
-                <img src={src} alt="" ref={image} />
+                <img src={src} alt={alt || ""} className={loaded ? STYLE['show'] : ''} onLoad={() => setLoaded(true)} />
             </div>
         </>
     )

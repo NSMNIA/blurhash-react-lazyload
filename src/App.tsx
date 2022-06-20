@@ -3,7 +3,25 @@ import LazyImage from "./components/LazyImage"
 function App() {
     return (
         <>
-            <LazyImage src="/src/assets/images/test.jpg" hash="LEE2Xu%100%1~WWB9Zxa.8R*D%of" alt="Test" />
+            <div className="cards">
+                <div className="card">
+                    <div className="card--image">
+                        <LazyImage src="/src/assets/images/test.jpg" hash="LEE2Xu%100%1~WWB9Zxa.8R*D%of" alt="Test" />
+                    </div>
+                    <div className="card--title">
+                        <h2>Test</h2>
+                    </div>
+                </div>
+
+                <div className="card">
+                    <div className="card--image">
+                        <LazyImage src="/src/assets/images/test2.jpg" hash="LTEf$qXTWBaelVWAjYf6IAV?kCkC" alt="Test 2" />
+                    </div>
+                    <div className="card--title">
+                        <h2>Test</h2>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
