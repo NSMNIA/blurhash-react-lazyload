@@ -13,7 +13,7 @@ const LazyImage: FC<LazyImageProps> = ({ src, hash = "", alt = "" }) => {
     return (
         <>
             <div className={STYLE["image"]}>
-                {hash !== null && <Blurhash
+                {hash !== "" ? <Blurhash
                     className={loaded ? `${STYLE['image--canvas']} ${STYLE['hide']}` : STYLE['image--canvas']}
                     hash={hash || ""}
                     height={'100%'}
@@ -21,7 +21,7 @@ const LazyImage: FC<LazyImageProps> = ({ src, hash = "", alt = "" }) => {
                     resolutionX={32}
                     resolutionY={32}
                     punch={1}
-                />}
+                /> : <div className={loaded ? `${STYLE['image--canvas']} ${STYLE['hide']}` : STYLE['image--canvas']}></div>}
                 <img src={src} alt={alt || ""} className={loaded ? STYLE['show'] : ''} onLoad={() => setLoaded(true)} />
             </div>
         </>

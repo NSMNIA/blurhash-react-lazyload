@@ -30,6 +30,15 @@ function App() {
                         <h2>Test 3</h2>
                     </div>
                 </div>
+
+                <div className="card">
+                    <div className="card--image">
+                        <LazyImage src="/src/assets/images/test3.jpg" hash="" alt="Test 4" />
+                    </div>
+                    <div className="card--title">
+                        <h2>Test 4</h2>
+                    </div>
+                </div>
             </div>
         </>
     )

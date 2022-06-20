@@ -28,8 +28,9 @@
         opacity: 1;
         z-index: 2;
         transition-property: opacity;
-        transition-duration: .17s;
+        transition-duration: .5s;
         transition-delay: .25s;
+        background-color: #f9f9f9;
         transition-timing-function: ease-in-out;
 
         &.hide {
